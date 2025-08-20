@@ -1,0 +1,130 @@
+:root {
+  --bg: #0f1620;
+  --card: #151e2b;
+  --accent: #4cc9f0;
+  --text: #e2e8f0;
+  --muted: #9aa5b1;
+  --border: #223045;
+  --success: #22c55e;
+  --warn: #f59e0b;
+  --danger: #ef4444;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  background: radial-gradient(1200px 600px at 70% -20%, #1b2840, transparent), var(--bg);
+  color: var(--text);
+}
+
+header {
+  text-align: center;
+  padding: 28px 16px 12px;
+}
+header h1 {
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+header p {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+
+main {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 12px 16px 40px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent), var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+input[type="text"], select {
+  background: #0e1521;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: 8px;
+  outline: none;
+  min-width: 280px;
+}
+
+button {
+  background: var(--accent);
+  color: #08111b;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  transition: transform 0.05s ease, filter 0.1s ease;
+}
+button:hover { filter: brightness(1.05); }
+button:active { transform: translateY(1px); }
+
+.output {
+  background: #0e1521;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  max-height: 320px;
+  overflow: auto;
+  white-space: pre-wrap;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(120px, 1fr));
+  gap: 10px;
+  margin: 8px 0 10px;
+}
+
+.metric {
+  background: #0e1521;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+}
+
+.metric .label {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.metric .value {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+footer {
+  text-align: center;
+  padding: 24px 0 40px;
+  color: var(--muted);
+}

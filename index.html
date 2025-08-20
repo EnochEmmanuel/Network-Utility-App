@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Network Utility App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Network Utility App</h1>
+    <p>Ping • Traceroute • Speed Test • System Info</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Target host</h2>
+      <div class="row">
+        <input id="hostInput" type="text" placeholder="e.g., 8.8.8.8 or example.com" />
+        <button id="btnPing">Ping</button>
+        <button id="btnTrace">Traceroute</button>
+      </div>
+      <pre id="netOutput" class="output"></pre>
+    </section>
+
+    <section class="card">
+      <h2>Speed test</h2>
+      <div class="row">
+        <label>
+          Download size:
+          <select id="downloadSize">
+            <option value="1048576">1 MB</option>
+            <option value="5242880">5 MB</option>
+            <option value="10485760">10 MB</option>
+            <option value="26214400" selected>25 MB</option>
+            <option value="52428800">50 MB</option>
+          </select>
+        </label>
+        <label>
+          Upload size:
+          <select id="uploadSize">
+            <option value="1048576">1 MB</option>
+            <option value="5242880">5 MB</option>
+            <option value="10485760" selected>10 MB</option>
+            <option value="26214400">25 MB</option>
+            <option value="52428800">50 MB</option>
+          </select>
+        </label>
+        <button id="btnSpeed">Run speed test</button>
+      </div>
+      <div class="grid">
+        <div class="metric">
+          <div class="label">Download</div>
+          <div id="dlMbps" class="value">—</div>
+        </div>
+        <div class="metric">
+          <div class="label">Upload</div>
+          <div id="ulMbps" class="value">—</div>
+        </div>
+        <div class="metric">
+          <div class="label">Latency (avg ping)</div>
+          <div id="latency" class="value">—</div>
+        </div>
+      </div>
+      <pre id="speedOutput" class="output"></pre>
+    </section>
+
+    <section class="card">
+      <h2>System info</h2>
+      <div class="row">
+        <button id="btnSysinfo">Get system info</button>
+      </div>
+      <pre id="sysOutput" class="output"></pre>
+    </section>
+  </main>
+
+  <footer>
+    <small>Runs locally. For traceroute, Windows uses tracert, macOS/Linux use traceroute.</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
